@@ -5,17 +5,39 @@ const ExpenseForm = () => {
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredDate, setEnteredDate] = useState("");
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: "",
+    //     enteredAmout: "",
+    //     enteredDate: ""
+    // });
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredTitle: event.target.value,
+        // });
+        //Safer way to ensure that you always operate on the latest state snapshot.
+        //Use this whenever state update depends on the previous state.
+        // setUserInput((prevState) => {
+        //     return {...prevState, enteredTitle:event.target.value};
+        // });
     };
 
     const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmout: event.target.value,
+        // });
     };
 
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate: event.target.value,
+        // });
     };
   return (
     <form>
